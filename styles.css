@@ -1,4 +1,4 @@
-.logo, .main-content__title {
+.logo,.main-content__title {
   font-family: 'PT Serif', serif;
 }
 
@@ -26,7 +26,11 @@ body {
 }
 
 .logo {
+  position: relative;
   padding: 40px 0;
+  padding-left: 44px;
+  font-size: 24px;
+  line-height: 31px;
 }
 
 .menu {
@@ -40,4 +44,25 @@ body {
 
 .menu__item:last-child {
   padding-right: 0;
+}
+
+.logo__circle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  opacity: .7;
+}
+
+.logo__circle_color_blue {
+  left: 8px;
+  top: 56%;
+  background: #C8DBFB;
+}
+
+.logo__circle_color_dark-blue {
+  background: #0056EC;
 }
