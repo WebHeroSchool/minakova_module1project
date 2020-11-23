@@ -39,11 +39,38 @@ body {
 }
 
 .menu__item {
-  padding: 0 13px;
+  position: relative;
+  font-size: 14px;
+  line-height: 16px;
+  margin-right: 26px;
+  color: #000;
+  text-decoration: none;
 }
 
+
 .menu__item:last-child {
-  padding-right: 0;
+  margin-right: 0;
+}
+
+.menu__item:after {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0056EC;
+  opacity: 0;
+  transition: opacity .5s, width .5s;
+}
+
+.menu__item:hover {
+  opacity: .5;
+}
+
+.menu__item:hover:after, .menu__item_active:after {
+  opacity: 1;
+  width: 100%;
 }
 
 .logo__circle {
