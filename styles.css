@@ -1,9 +1,14 @@
+
 .logo,.main__title {
   font-family: 'PT Serif', serif;
 }
 
-.menu__item, .main__description, .main__button {
+.menu__item, .main__description, .main__button, .hamburger-menu__list_item {
   font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
@@ -46,7 +51,6 @@ body {
   text-decoration: none;
 }
 
-
 .menu__item:last-child {
   margin-right: 0;
 }
@@ -67,7 +71,7 @@ body {
   opacity: .5;
 }
 
-.menu__item:hover:after, .menu__item_active:after {
+.menu__item:hover:after, .menu__item_active::after {
   opacity: 1;
   width: 100%;
 }
@@ -91,6 +95,10 @@ body {
 
 .logo__circle_color_dark-blue {
   background: #0056EC;
+}
+
+#checkbox,.checkbox__button,.hamburger-menu__list {
+  display: none;
 }
 
 .main {
@@ -117,8 +125,7 @@ body {
   display: inline-block;
   color: #fff;
   background: #0056EC;
-  width: 224px;
-  height: 20px;
+  background-size: 224px 20px;
   padding: 20px 25px;
   font-size: 18px;
   line-height: 21px;
@@ -133,4 +140,245 @@ body {
 
 .main__title-text_highlight {
   background: #ECF3FF;
+}
+
+
+@media (max-width: 1366px) {
+
+  .wrapper {
+    width: 68%;
+  }
+
+  .header {
+    margin-bottom: 3%;
+  }
+
+  .menu {
+    padding-right: 5px;
+  }
+
+  .menu__item {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .main {
+    padding-right: 47%;
+    background-size: 55%;
+    background-position-y: 17%;
+  }
+
+  .main__title {
+    font-size: 50px;
+    line-height: 65px;
+  }
+
+  .main__description {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .main__button {
+    padding: 14px 21px;
+    font-size: 14px;
+    line-height: 16px;
+    background-size: 209px 44px;
+  }
+
+}
+
+
+
+@media (max-width: 1024px) {
+
+  .wrapper {
+    width: 91%;
+  }
+
+  .logo {
+    padding-left: 44px;
+  }
+
+  .logo__circle_color_dark-blue {
+    top: 44%;
+  }
+
+  .logo__circle_color_blue {
+
+  }
+
+  .menu {
+    padding-right: 0;
+  }
+}
+
+
+
+@media (max-width: 834px) {
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header {
+    padding: 24px 0;
+    margin-bottom: 5%;
+  }
+
+  .logo {
+    color: #fff;
+  }
+
+  .checkbox__button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    width: 25px;
+    height: 17px;
+  }
+
+  .checkbox__button > span,
+  .checkbox__button > span::before,
+  .checkbox__button > span::after {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #0056EC;
+  }
+
+  .checkbox__button > span::before {
+    content: '';
+    top: -8px;
+  }
+  .checkbox__button > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  #checkbox:checked ~ .hamburger-menu > .hamburger-menu__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    height: 100%;
+  }
+
+  #checkbox:checked ~ .hamburger-menu {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  #checkbox:checked ~ .checkbox__button > span {
+    z-index: 2;
+    transform: rotate(45deg);
+  }
+
+  #checkbox:checked ~ .checkbox__button > span::before {
+    z-index: 2;
+    top: 0;
+    transform: rotate(0);
+  }
+
+  #checkbox:checked ~ .checkbox__button > span::after {
+    z-index: 2;
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  .hamburger-menu__list > li {
+    padding-bottom: 24px;
+  }
+
+  .hamburger-menu__list_item {
+    font-size: 30px;
+    line-height: 35px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .main {
+    padding: 74% 10% 0 10%;
+    background-size: 74%;
+    background-position: top center;
+    text-align: center;
+  }
+
+  .main__title {
+    margin-bottom: 44px;
+    padding-top: 0;
+  }
+
+  .main__description {
+    padding: 0 10%;
+    margin-bottom: 41px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .main {
+    padding-top: 68%;
+  }
+}
+
+
+
+@media (max-width: 375px) {
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .header {
+    margin-bottom: 0;
+    padding: 20px 0;
+    margin-bottom: 11px;
+  }
+
+  .logo__circle {
+    top: 50%;
+    left: 2%;
+  }
+
+  .logo__circle_color_blue {
+    left: 5%;
+    top: 74%;
+  }
+
+  .main {
+    padding: 69% 10% 0 10%;
+    background-size: 84%;
+  }
+
+  .main__title {
+    margin-bottom: 32px;
+    padding-top: 30px;
+    font-size: 30px;
+    line-height: 39px;
+  }
+
+  .main__description {
+    margin-bottom: 25px;
+    padding: 14px 22px;
+    padding: 0 6%;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+
 }
